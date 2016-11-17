@@ -1,1 +1,4 @@
-console.log('Test build');
+const testES6 = () => {
+  console.log('Test ES6');
+};
+testES6();
