@@ -4,11 +4,14 @@
   "description": "Learn ReactJs",
   "main": "index.js",
   "scripts": {
+    "lint": "esw webpack.config.* src",
+    "lint:watch": "npm run lint -- --watch",
     "clean-dist": "rimraf dist",
     "copy-files": "cpy 'static/**/*.*' index.html '../dist/' --cwd=src --parents",
     "clean-and-copy": "npm run clean-dist && npm run copy-files",
     "prestart": "npm run clean-and-copy",
-    "start": "webpack-dev-server --content-base dist"
+    "start": "npm-run-all --parallel start:dev lint:watch",
+    "start:dev": "webpack-dev-server --content-base dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,14 @@
     "babel-loader": "^6.2.7",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "cpy-cli": "^1.0.1",
+    "eslint": "^2.13.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-watch": "^2.1.11",
+    "npm-run-all": "^3.1.1",
+    "rimraf": "^2.5.4",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
