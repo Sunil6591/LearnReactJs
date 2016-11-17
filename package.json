@@ -26,7 +26,6 @@
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
-    "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "cpy-cli": "^1.0.1",
     "eslint": "^2.13.1",
