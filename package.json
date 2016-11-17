@@ -4,7 +4,11 @@
   "description": "Learn ReactJs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean-dist": "rimraf dist",
+    "copy-files": "cpy 'static/**/*.*' index.html '../dist/' --cwd=src --parents",
+    "clean-and-copy": "npm run clean-dist && npm run copy-files",
+    "prestart": "npm run clean-and-copy",
+    "start": "webpack-dev-server --content-base dist"
   },
   "repository": {
     "type": "git",
