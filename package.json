@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Sunil6591/LearnReactJs/issues"
   },
-  "homepage": "https://github.com/Sunil6591/LearnReactJs#readme"
+  "homepage": "https://github.com/Sunil6591/LearnReactJs#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
