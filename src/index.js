@@ -1,4 +1,7 @@
-const testES6 = () => {
-  console.log('Test ES6');
-};
-testES6();
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('app')
+);
