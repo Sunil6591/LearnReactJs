@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import MyFirstComponent from './MyFirstComponent';
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <MyFirstComponent />,
   document.getElementById('app')
 );
