@@ -1,6 +1,11 @@
 module.exports = {
+  devtool: 'eval',
   context: __dirname + "/src",
-  entry: "./index.js",
+  entry: [
+    'react-hot-loader/patch',
+    'webpack/hot/dev-server',
+    './index.js'
+  ],
   output: {
       path: __dirname + "/dist",
       filename: "bundle.js"
