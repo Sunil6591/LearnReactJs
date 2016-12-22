@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import MyFirstComponent from './components/MyFirstComponent';
+import Root from './components/Root';
 
 ReactDOM.render(
   <AppContainer>
-    <MyFirstComponent />
+    <Root />
   </AppContainer>,
   document.getElementById('app')
 );
 
 if (module.hot) {
-  module.hot.accept('./components/MyFirstComponent', () => {
-    const NextApp = require('./components/MyFirstComponent').default;
+  module.hot.accept('./components/Root', () => {
+    const NextApp = require('./components/Root').default;
     ReactDOM.render(
       <AppContainer>
         <NextApp />
