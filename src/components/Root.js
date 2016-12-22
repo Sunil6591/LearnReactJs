@@ -1,17 +1,12 @@
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router';
+import routes from '../routes';
 
-import App from './App';
-import Page1 from './Page1';
 
 const Root = React.createClass({
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/" component={App}>
-          <Route path="page1" component={Page1}/>
-        </Route>
-      </Router>
+      <Router history={browserHistory} routes={routes} />
     );
   }
 });
