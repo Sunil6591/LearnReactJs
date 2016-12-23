@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'eval',
   context: __dirname + "/src",
@@ -10,6 +11,12 @@ module.exports = {
     path: __dirname + "/dist",
     filename: "bundle.js"
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      inject: 'body'
+    })
+  ],
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
