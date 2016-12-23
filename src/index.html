@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Learn ReactJs</title>
-    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/bootstrap/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="app">
     </div>
-    <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+      }
+    })();
+    </script>
   </body>
 </html>

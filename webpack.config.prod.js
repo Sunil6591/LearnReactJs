@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 module.exports = {
   context: __dirname + "/src",
   entry: {
@@ -13,6 +14,12 @@ module.exports = {
     filename: "[name].[hash].js"
   },
   plugins: [
+    new SWPrecacheWebpackPlugin(
+      {
+        cacheId: 'learn-reactjs',
+        staticFileGlobsIgnorePatterns: [/dist\/.*\.html/]
+      }
+    ),
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
 
