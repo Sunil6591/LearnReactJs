@@ -7,6 +7,7 @@ const app = express()
 app.use(compression());
 // serve static assets normally
 app.use(express.static(__dirname + '/dist'))
+app.use('/vendor', express.static(__dirname + '/node_modules/'))
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).

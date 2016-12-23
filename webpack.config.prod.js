@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: __dirname + "/src",
   entry: {
@@ -37,6 +38,16 @@ module.exports = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: '../node_modules/bootstrap/dist/js/bootstrap.min.js',
+        to: 'node_modules/bootstrap'
+      },
+      {
+        from: '../node_modules/bootstrap/dist/css/bootstrap.min.css',
+        to: 'node_modules/bootstrap'
+      }
+    ]),
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'
