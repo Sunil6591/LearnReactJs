@@ -13,7 +13,8 @@
     "start": "npm-run-all --parallel start:dev lint:watch",
     "start:dev": "webpack-dev-server --content-base dist --hot --inline",
     "prebuild:prod": "npm run clean-dist",
-    "build:prod": "webpack --config webpack.config.prod.js --progress"
+    "build:prod": "webpack --config webpack.config.prod.js --progress",
+    "start:prod": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "compression": "^1.6.2",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-router": "^3.0.0"
