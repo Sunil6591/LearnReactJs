@@ -9,7 +9,9 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new ExtractTextPlugin('styles-[hash].css'),
+    new ExtractTextPlugin('styles-[hash].css', {
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -30,7 +32,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader!css-loader?modules=true&localIdentName=[local]___[hash:base64:5]') }
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?modules=true&localIdentName=[local]___[hash:base64:5]') }
     ]
   }
 };

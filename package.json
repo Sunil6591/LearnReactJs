@@ -11,7 +11,9 @@
     "clean-and-copy": "npm run clean-dist && npm run copy-files",
     "prestart": "npm run clean-and-copy",
     "start": "npm-run-all --parallel start:dev lint:watch",
-    "start:dev": "webpack-dev-server --content-base dist --hot --inline"
+    "start:dev": "webpack-dev-server --content-base dist --hot --inline",
+    "prebuild:prod": "npm run clean-dist",
+    "build:prod": "webpack --config webpack.config.prod.js --progress"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
+    "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
