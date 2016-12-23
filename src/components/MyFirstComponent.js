@@ -1,10 +1,10 @@
 import React from 'react';
-import './MyFirstComponent.css';
+import styles from './MyFirstComponent.css';
 
 const MyFirstComponent = React.createClass({
   render() {
     return (
-      <h1>Hello, world!</h1>
+      <h1 className={styles.blue}>Hello, world!</h1>
     );
   }
 });

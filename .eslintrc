@@ -65,5 +65,8 @@
     "react/wrap-multilines": 1
   },
   "globals": {
-  }
+  },
+  "settings": {
+      "import/ignore": [".css$","node_modules/*"]
+   }
 }
