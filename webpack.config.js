@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   devtool: 'eval',
   context: __dirname + "/src",
@@ -13,6 +14,16 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: '../node_modules/bootstrap/dist/js/bootstrap.min.js',
+        to: 'node_modules/bootstrap'
+      },
+      {
+        from: '../node_modules/bootstrap/dist/css/bootstrap.min.css',
+        to: 'node_modules/bootstrap'
+      }
+    ]),
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'
