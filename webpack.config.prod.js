@@ -3,12 +3,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   context: __dirname + "/src",
-  entry: './index.js',
+  entry: {
+    vendor: ['react', 'react-dom', 'react-router'],
+    app: './index.js'
+  },
   output: {
     path: __dirname + "/dist",
-    filename: "bundle.js"
+    filename: "[name].[hash].js"
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+
+      // filename: "vendor.js"
+      // (Give the chunk a different name)
+
+      minChunks: Infinity,
+      // (with more entries, this ensures that no other module
+      //  goes into the vendor chunk)
+    }),
     new ExtractTextPlugin('styles-[hash].css', {
       allChunks: true
     }),
