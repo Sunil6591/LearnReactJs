@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     path: __dirname + "/dist",
-    filename: "[name].[hash].js"
+    filename: "[name].[hash].js",
+    publicPath: '/'
   },
   plugins: [
     new SWPrecacheWebpackPlugin(
@@ -26,7 +27,7 @@ module.exports = {
       // filename: "vendor.js"
       // (Give the chunk a different name)
 
-      minChunks: Infinity,
+      minChunks: Infinity
       // (with more entries, this ensures that no other module
       //  goes into the vendor chunk)
     }),
@@ -53,6 +54,10 @@ module.exports = {
       {
         from: '../node_modules/bootstrap/dist/css/bootstrap.min.css',
         to: 'node_modules/bootstrap'
+      },
+      {
+        from: '../node_modules/jquery/dist/jquery.min.js',
+        to: 'node_modules/jquery/jquery.min.js'
       }
     ]),
     new HtmlWebpackPlugin({

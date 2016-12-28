@@ -22,6 +22,10 @@ module.exports = {
       {
         from: '../node_modules/bootstrap/dist/css/bootstrap.min.css',
         to: 'node_modules/bootstrap'
+      },
+      {
+        from: '../node_modules/jquery/dist/jquery.min.js',
+        to: 'node_modules/jquery/jquery.min.js'
       }
     ]),
     new HtmlWebpackPlugin({

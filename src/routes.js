@@ -13,7 +13,13 @@ const routes = (
       require.ensure([], (require) => {
         cb(null, require('./components/Page1').default);
       });
-    }}/>
+    }}>
+      <Route path="first" getComponent={(nextState, cb) => {
+        require.ensure([], (require) => {
+          cb(null, require('./components/MyFirstComponent').default);
+        });
+      }} />
+    </Route>
     <Route path="page2" getComponent={(nextState, cb) => {
       require.ensure([], (require) => {
         cb(null, require('./components/Page2').default);
