@@ -24,11 +24,7 @@ const routes = (
       require.ensure([], (require) => {
         cb(null, require('./components/Page2').default);
       });
-    }} onEnter={(nextState, replace, cb) => {
-        replace({ pathname: '/page1'});
-        cb();
-      }
-    }/>
+    }} />
   </Route>
 );
 

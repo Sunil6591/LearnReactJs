@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './MyFirstComponent.css';
 
 const MyFirstComponent = React.createClass({
@@ -21,4 +21,7 @@ const MyFirstComponent = React.createClass({
   }
 });
 
+MyFirstComponent.propTypes = {
+  onClose: PropTypes.func.isRequired
+};
 export default MyFirstComponent;
