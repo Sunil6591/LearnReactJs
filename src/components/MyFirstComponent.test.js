@@ -1,24 +1,43 @@
 import React from 'react';
 import MyFirstComponent from './MyFirstComponent';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import serializer from 'enzyme-to-json/serializer';
+
+expect.addSnapshotSerializer(serializer);
 
 it('renders correctly', () => {
-  const tree = renderer.create(
+  const wrapper = shallow(
     <MyFirstComponent onClose={() => {}} />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('renders small header', () => {
-  const tree = renderer.create(
+  const wrapper = shallow(
     <MyFirstComponent onClose={() => {}} showSmallHeader={true} />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('renders hide small header', () => {
-  const tree = renderer.create(
+  const wrapper = shallow(
     <MyFirstComponent onClose={() => {}} showSmallHeader={false} />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('renders counter', () => {
+  const wrapper = shallow(
+    <MyFirstComponent onClose={() => {}} showSmallHeader={false} />
+  );
+  wrapper.setState({ counter: 10 });
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should increment counter', () => {
+  const wrapper = shallow(
+    <MyFirstComponent onClose={() => {}} showSmallHeader={false} />
+  );
+  wrapper.find('button.counter').simulate('click');
+  expect(wrapper).toMatchSnapshot();
 });

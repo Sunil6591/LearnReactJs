@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h1>
+    Page 1
+  </h1>
+  <Link
+    onlyActiveOnIndex={false}
+    style={Object {}}
+    to={
+      Object {
+        "pathname": "/page1/first",
+        "state": Object {
+          "modal": true,
+          "returnTo": undefined,
+        },
+      }
+    }
+  >
+    First component
+  </Link>
+</div>
+`;
+
+exports[`renders modal children correctly 1`] = `
+<div>
+  <h1>
+    Page 1
+  </h1>
+  <Link
+    onlyActiveOnIndex={false}
+    style={Object {}}
+    to={
+      Object {
+        "pathname": "/page1/first",
+        "state": Object {
+          "modal": true,
+          "returnTo": undefined,
+        },
+      }
+    }
+  >
+    First component
+  </Link>
+  <withRouter(Modal)
+    title="My First Component"
+  >
+    <h1>
+      Test
+    </h1>
+  </withRouter(Modal)>
+</div>
+`;
