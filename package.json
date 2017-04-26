@@ -4,11 +4,13 @@
   "description": "Learn ReactJs",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "esw webpack.config.* src",
     "lint:watch": "npm run lint -- --watch",
     "clean-dist": "rimraf dist",
     "prestart": "npm run clean-dist",
-    "start": "npm-run-all --parallel start:dev lint:watch",
+    "start": "npm-run-all --parallel start:dev lint:watch test:watch",
     "start:dev": "webpack-dev-server --content-base dist --hot --inline",
     "prebuild:prod": "npm run clean-dist",
     "build:prod": "webpack --config webpack.config.prod.js --progress",
@@ -35,13 +37,17 @@
     "css-loader": "^0.26.1",
     "eslint": "^2.13.1",
     "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
     "eslint-watch": "^2.1.11",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^19.0.2",
     "npm-run-all": "^3.1.1",
     "react-hot-loader": "^3.0.0-beta.6",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "sw-precache-webpack-plugin": "^0.7.0",
@@ -56,5 +62,11 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-router": "^3.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

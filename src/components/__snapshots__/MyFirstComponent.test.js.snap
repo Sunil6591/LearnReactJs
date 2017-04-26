@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="modal-header"
+  >
+    <button
+      aria-label="Close"
+      className="close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <h4
+      className="modal-title"
+    >
+      My First Component 123
+    </h4>
+  </div>
+  <div
+    className="modal-body"
+  >
+    <h1
+      className="blue"
+    >
+      Hello, world!
+    </h1>
+  </div>
+  <div
+    className="modal-footer"
+  >
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Close
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders hide small header 1`] = `
+<div>
+  <div
+    className="modal-header"
+  >
+    <button
+      aria-label="Close"
+      className="close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <h4
+      className="modal-title"
+    >
+      My First Component 123
+    </h4>
+  </div>
+  <div
+    className="modal-body"
+  >
+    <h1
+      className="blue"
+    >
+      Hello, world!
+    </h1>
+  </div>
+  <div
+    className="modal-footer"
+  >
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Close
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders small header 1`] = `
+<div>
+  <div
+    className="modal-header"
+  >
+    <button
+      aria-label="Close"
+      className="close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    <h4
+      className="modal-title"
+    >
+      My First Component 123
+    </h4>
+  </div>
+  <div
+    className="modal-body"
+  >
+    <h1
+      className="blue"
+    >
+      Hello, world!
+    </h1>
+    <h2>
+      Hello, minions!
+    </h2>
+  </div>
+  <div
+    className="modal-footer"
+  >
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Close
+    </button>
+  </div>
+</div>
+`;

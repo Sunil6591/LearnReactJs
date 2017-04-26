@@ -2,8 +2,12 @@ import React, { PropTypes } from 'react';
 import styles from './MyFirstComponent.css';
 
 const MyFirstComponent = React.createClass({
+  propTypes: {
+    onClose: PropTypes.func.isRequired,
+    showSmallHeader: PropTypes.bool
+  },
   render() {
-    const { onClose } = this.props;
+    const { onClose, showSmallHeader } = this.props;
     return (
       <div>
         <div className="modal-header">
@@ -12,6 +16,7 @@ const MyFirstComponent = React.createClass({
         </div>
         <div className="modal-body">
           <h1 className={styles.blue}>Hello, world!</h1>
+          {showSmallHeader ? <h2>Hello, minions!</h2> : null}
         </div>
         <div className="modal-footer">
           <button type="button" className="btn btn-primary" onClick={onClose}>Close</button>
@@ -21,7 +26,4 @@ const MyFirstComponent = React.createClass({
   }
 });
 
-MyFirstComponent.propTypes = {
-  onClose: PropTypes.func.isRequired
-};
 export default MyFirstComponent;
