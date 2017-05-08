@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 module.exports = {
+  devtool: 'eval',
   context: __dirname + "/src",
   entry: {
     vendor: ['react', 'react-dom', 'react-router'],
